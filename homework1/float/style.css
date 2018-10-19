@@ -1,0 +1,174 @@
+body {
+    font: 14px "Arial";
+    line-height: 22px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    list-style:none;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+}
+
+.main-content {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 0;
+    overflow: hidden;
+}
+
+.header-container > div {
+    margin-top: 10px;
+    float: left;
+    height: 150px;
+    background-color: gray;
+}
+
+.header-block1 {
+    width: 15%;
+}
+
+.header-block2 {
+    width: 31%;
+    margin-left: 2%;
+}
+
+.header-block3 {
+    width: 50%;
+    margin-left: 2%
+}
+
+.main-container {
+    position: relative;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+    height: 695px;
+}
+
+.main-left {
+    margin-top: 10px;
+    float: left;
+    width: 22%;
+    height: 663px;
+}
+
+.block4-nav  {
+    background-color: gray;
+}
+
+.block4-nav-list {
+    padding: 10px;
+}
+
+.main-left-bottom {
+    margin-top: 255px;
+    width: relative;
+    height: 125px;
+    background-color: grey;
+}
+
+.main-center {
+  width: 75%;
+  float: right;
+  margin-left: 3px;
+  margin-top: 10px;
+}
+
+.main-center-block5 {
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: lightgrey;
+
+}
+
+.main-center-block5-list {
+  padding: 20px;
+}
+
+.main-center-blocks6 {
+  overflow: hidden;
+}
+.main-center-block6 {
+  width: 19%;
+  height: 125px;
+  margin: 0 11px 11px 0;
+  float: left;
+  background-color: lightgrey;
+}
+#block6-right {
+  margin-right: 0;
+}
+.main-center-bottom {
+  height: 125px;
+}
+.main-center-block8 {
+  width: 47%;
+  height: 100%;
+  float: left;
+  background-color: lightgrey;
+  padding: 10px;
+}
+.main-center-block9 {
+  float: right;
+  width: 47%;
+  height: 100%;
+  background-color: lightgrey;
+  padding: 10px;
+}
+
+.main-center-block8 p,
+.main-center-block9 p {
+  text-align: justify;
+}
+
+.footer-block10,
+.footer-block11 {
+    float: left;
+    width: 32%;
+    min-height: 185px;
+    margin-right: 2%;
+    padding: 15px;
+    background-color: gray;
+    box-sizing: border-box;
+    color: white;
+}
+
+.footer-block10 ul {
+    float: left;
+    width: 50%;
+}
+
+.footer-block11 li::before {
+    content: "■";
+    color: white;
+    padding-right: 5px;
+}
+
+.footer-blocks {
+    position: relative;
+    float: left;
+    width: 32%;
+    min-height: 185px;
+}
+
+.footer-block12 {
+    background-color: gray;
+    height: 70px;
+    width:100%;
+}
+
+.footer-block13 {
+    background-color: gray;
+    position: absolute;
+    height: 70px;
+    bottom: 0;
+    width: 100%;
+}
