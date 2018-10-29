@@ -1,57 +1,56 @@
-function min_number(arr){
-  var min=arr[0]
-  for (var i=1; i<arr.length; i++) {
-    if (arr[i] != null && arr[i] != undefined && isFinite(arr[i])) {
-      if (arr[i]<min) {
-        min=arr[i]
+function minNumber (arr) {
+  var min = arr[0]
+  for (var i = 1; i < arr.length; i++) {
+    if (arr[i] != null && arr[i] !== undefined && isFinite(arr[i])) {
+      if (arr[i] < min) {
+        min = arr[i]
       }
     }
   }
-  return min;
+  return min
 }
 
-function max_number(arr){
-  var max=arr[0];
-  for (var i=1; i<arr.length; i++) {
-    if (arr[i] != null && arr[i] != undefined && isFinite(arr[i])) {
-      if (arr[i]>max) {
-        max=arr[i];
+function maxNumber (arr) {
+  var max = arr[0]
+  for (var i = 1; i < arr.length; i++) {
+    if (arr[i] != null && arr[i] !== undefined && isFinite(arr[i])) {
+      if (arr[i] > max) {
+        max = arr[i]
       }
     }
   }
-  return max;
+  return max
 }
 
-function sum_number(arr) {
-  var sum=0;
-  for (var i=0; i<arr.length; i++) {
-    if (arr[i] != null && arr[i] != undefined && isFinite(arr[i])) {
-      sum+=arr[i];
+function sumNumber (arr) {
+  var sum = 0
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] !== null && arr[i] !== undefined && isFinite(arr[i])) {
+      sum += arr[i]
     }
   }
-  return sum;
+  return sum
 }
 
-function min_max_sum_array(function_name, arr) {
-  var result;
-  switch(function_name) {
+function minMaxSumArray (FunctionName, arr) {
+  var result
+  switch (FunctionName) {
     case 'min':
-      result = min_number(arr);
-      break;
+      result = minNumber(arr)
+      break
     case 'max':
-      result = max_number(arr);
-      break;
+      result = maxNumber(arr)
+      break
     case 'sum':
-      result = sum_number(arr);
-      break;
+      result = sumNumber(arr)
+      break
   }
-  return result;
+  return result
 }
 
-
-initial_array=[3,0,-5,1,44,-12,3,0,0,1,2,-3,-3,2,1,4,-2-3-1];
-console.log(`Minimal value of array [${initial_array}] is ${min_max_sum_array('min', initial_array)}`);
-initial_array=[-1,-8,-2];
-console.log(`Maximal value of array [${initial_array}] is ${min_max_sum_array('max', initial_array)}`);
-initial_array=[1,undefined,3,5,-3];
-console.log(`Sum of values of array [${initial_array}] is ${min_max_sum_array('sum', initial_array)}`);
+var initialArray = [3, 0, -5, 1, 44, -12, 3, 0, 0, 1, 2, -3, -3, 2, 1, 4, -2, -3, -1]
+console.log(`Minimal value of array [${initialArray}] is ${minMaxSumArray('min', initialArray)}`)
+initialArray = [-1, -8, -2]
+console.log(`Maximal value of array [${initialArray}] is ${minMaxSumArray('max', initialArray)}`)
+initialArray = [1, undefined, 3, 5, -3, null]
+console.log(`Sum of values of array [${initialArray}] is ${minMaxSumArray('sum', initialArray)}`)
