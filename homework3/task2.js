@@ -1,7 +1,7 @@
 function arrayToObject (arr) {
   var obj = {}
   arr.forEach(function (item, i, arr) {
-    obj[i] = item
+    obj[item] = i
   })
   return obj
 }
