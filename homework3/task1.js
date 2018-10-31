@@ -6,7 +6,7 @@ function waterVolume (arr) {
   for (var i = 1; i < arr.length; i++) {
     leftHighest[i] = Math.max(leftHighest[i - 1], arr[i])
   }
-  for ((i = arr.length - 2); i >= 0; i--) {
+  for (i = arr.length - 2; i >= 0; i--) {
     rightHighest[i] = Math.max(rightHighest[i + 1], arr[i])
   }
   var totalWaterVolume = 0
