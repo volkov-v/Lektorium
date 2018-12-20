@@ -19,12 +19,14 @@ Element.prototype.makeDraggable = function () {
   o.onmousedown = function (e) {
     let offsetX = e.pageX - parseInt(o.style.left);
     let offsetY = e.pageY - parseInt(o.style.top);
+    o.style.zIndex = 10;
     document.onmousemove = function (e) {
-      o.style.left = Math.max(Math.min(e.pageX - offsetX, o.parentNode.clientWidth - o.clientWidth), 0) + 'px';
+      o.style.left = Math.max(Math.min(e.pageX - offsetX - 1, o.parentNode.clientWidth - o.clientWidth - 1), 0) + 'px';
       o.style.top = Math.max(Math.min(e.pageY - offsetY, o.parentNode.clientHeight - o.clientHeight), 0) + 'px'
     };
     document.onmouseup = function (e) {
-      document.onmousemove = o.onmouseup = null
+      document.onmousemove = o.onmouseup = null;
+      o.style.zIndex = 0;
     }
   };
   o.ondragstart = function () {

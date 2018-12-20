@@ -16,18 +16,19 @@ document.addEventListener("DOMContentLoaded", function(event)
     // get the width of the container
     moveOffset = parseInt(window.getComputedStyle(document.getElementById('carousel-container')).width, 10);
     // calcuate the width of the carousel
-    document.getElementById('carousel').style.width = (amount * moveOffset) + 'px';
+    carousel.style.width = (amount * moveOffset) + 'px';
     // prevent multiple click when transition
     for(var i = 0; i < amount; i++)
     {
         currTransl[i] = -moveOffset;
-        document.getElementsByClassName("slide")[i].addEventListener("transitionend", transitionCompleted, true);
-        document.getElementsByClassName("slide")[i].addEventListener("webkitTransitionEnd", transitionCompleted, true);
-        document.getElementsByClassName("slide")[i].addEventListener("oTransitionEnd", transitionCompleted, true);
-        document.getElementsByClassName("slide")[i].addEventListener("MSTransitionEnd", transitionCompleted, true);
+        var slideI = document.getElementsByClassName("slide")[i];
+        slideI.addEventListener("transitionend", transitionCompleted, true);
+        slideI.addEventListener("webkitTransitionEnd", transitionCompleted, true);
+        slideI.addEventListener("oTransitionEnd", transitionCompleted, true);
+        slideI.addEventListener("MSTransitionEnd", transitionCompleted, true);
     }
     // add the last item to the start so that translateX(-moveOffset) works (In case the first click is the previous button)
-    document.getElementById('carousel').insertBefore(document.getElementById('carousel').children[4],document.getElementById('carousel').children[0])
+    carousel.insertBefore(carousel.children[4],carousel.children[0])
     // add click events to control arrows
     document.getElementById('prev').addEventListener('click', prev, true);
     document.getElementById('next').addEventListener('click', next, true);
@@ -35,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function(event)
 
 function prev()
 {
-    if(translationComplete === true)
+    if(translationComplete)
     {
         translationComplete = false;
         index--;
@@ -60,7 +61,7 @@ function prev()
 
 function next()
 {
-    if(translationComplete === true)
+    if(translationComplete)
     {
         translationComplete = false;
         var outerIndex = (index) % amount;
