@@ -66,10 +66,15 @@ createSpan();
         if (target.tagName === "SPAN"){
             var li = target.parentElement,
             id = li.id;
+            if (li.className === "checked") {
+                countDoneValue--;
+                changeCount();
+            }
             var ul = li.parentElement;
             ul.removeChild(li);
             delete data[id];
             addToLS(data);
+
         }
     });
 })();
